@@ -1,0 +1,21 @@
+<h1>Mi cesta</h1>
+<center>
+  <table id="cestaCompra">
+    <tr>
+      <th>Articulo</th>
+      <th>Precio</th>
+    </tr>
+    <% @articulos.each do |a| %>
+      <tr>
+          <td><%= image_tag a.imagen, size: "40x40" %><%= a.nombre %></td>
+          <td><%= a.precio %></td>
+      </tr>
+      <% @total+=a.precio %>
+    <% end %>
+      <tr>
+          <td style="width: 200px; text-align: right;">TOTAL</td>
+          <td style="width: 50px; text-align: right;"><%= @total %></td>
+      </tr>
+  </table>
+  <%= link_to "Seguir comprando", inicio_url %> <%= link_to "Vaciar carrito", params:{:vacia=>""}, data:{:confirm=>"Estas seguro?"} %>
+</center>

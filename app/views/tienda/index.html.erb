@@ -1,0 +1,25 @@
+<% if !flash[:notice].nil? %>
+  <div id="flash-message">
+    <%= flash[:notice] %>
+</div>
+<% end %>
+
+<% @art.each do |a| %>
+  <div class="articulo">
+    <table>
+      <tr>
+        <td rowspan="4"><%= image_tag a.imagen %></td>
+        <td><div class="nombre"><%= a.nombre %></div></td>
+      </tr>
+      <tr>
+        <td><div class="descripcion"><%= a.descripcion %></div></td>
+      </tr>
+      <tr>
+        <td><div class="precio"><%= a.precio %> €</div></td>
+      </tr>
+      <tr>
+        <td><div class="anadir"><%= button_to "Añadir", carro_url, params:{:art=>a.id, :nom=>a.nombre} %></div></td>
+      </tr>
+    </table>
+  </div>
+<% end %>

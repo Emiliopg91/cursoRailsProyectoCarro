@@ -1,0 +1,153 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0fbf2
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    background-color: transparent;
+    color: inherit;
+}
+header {
+    display: block;
+    text-align: center;
+    box-shadow: 0px 2px 5px #aaaaaa;
+}
+header div:first-child {
+    line-height: 60px;
+    font-size: 20px;
+    background-color:#00aaaa;
+    color: #006666;
+    text-shadow: 0px 1px #aaaaaa;
+}
+header div:last-child {
+    display: table;
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    background-color: #006666;
+    color: white;
+}
+header div:last-child a{
+    display: table-cell;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-top: 5px;
+    transition: background-color 0.5s;
+}
+header div:last-child a:hover{
+    background-color: #008888;
+}
+
+#cuerpo {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#cuerpo h1 {
+    font-size: 30px;
+    line-height: 40px;
+}
+
+#cuerpo #flash-message{
+    background-color: rgba(0,221,221,0.1);
+    font-weight: bolder;
+    font-size: 25px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#cuerpo .articulo {
+    display: inline-block;
+    width: 270px;
+    height: 160px;
+    padding: 5px;
+    margin: 5px 5px 0 0;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#cuerpo .articulo .nombre{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#cuerpo .articulo .descripcion{
+    font-size: 12px;
+    font-style: italic;
+}
+
+#cuerpo .articulo .precio{
+    font-size: 17px;
+    font-weight: bolder;
+    text-align: right;
+}
+
+#cuerpo .articulo .anadir{
+    text-align: center;
+}
+
+#cuerpo #cestaCompra th{
+    border-bottom: 2px solid black;
+}
+
+#cuerpo #cestaCompra tr:not(:first-child):not(:last-child) td:nth-child(2){
+    width: 230px; 
+    text-align: left;
+}
+
+#cuerpo #cestaCompra tr:not(:first-child):not(:last-child) td:last-child{
+    width: 50px; 
+    text-align: right;
+}
+
+#cuerpo #cestaCompra tr:not(:first-child):not(:last-child):nth-child(even){
+    background-color: #eeeeee;
+}
+
+#cuerpo #cestaCompra tr:not(:first-child):not(:last-child):nth-child(odd){
+    background-color: #ffffff;
+}
+
+#cuerpo #cestaCompra tr:last-child {
+    font-weight: bold;
+}
+
+#cuerpo #cestaCompra tr:last-child td {
+    font-weight: bold;
+    border-top: 2px solid black;
+}
+
+#cuerpo #listado-articulos th{
+    border-bottom: 2px solid black;
+}
+
+#cuerpo #listado-articulos tr:not(:first-child):nth-child(even){
+    background-color: #eeeeee;
+}
+
+#cuerpo #listado-articulos tr:not(:first-child):nth-child(odd){
+    background-color: #ffffff;
+}

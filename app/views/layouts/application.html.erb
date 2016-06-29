@@ -1,0 +1,28 @@
+<% session[:cesta]||=Array.new %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProyectoFinal</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+        <div>
+            <h1 id="banner">Tienda de barrio</h1>
+        </div>
+        <div id="menu">
+          <%= link_to_unless_current "Inicio", inicio_url %>
+          <%= link_to_unless_current "Quienes somos", quienes_url %>
+          <%= link_to_unless_current "Contacto", contacto_url %>
+          <% if session[:cesta].length > 0 %>
+            <%= link_to_unless_current "Cesta", carro_url %>
+          <% end %>
+        </div>
+    </header>
+    <section id="cuerpo">
+      <%= yield %>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Articulos</h1>
+<center>
+<table id="listado-articulos">
+    <tr>
+      <th>Imagen</th>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Descripcion</th>
+      <th colspan="3">Acciones</th>
+    </tr>
+    <% @articulos.each do |articulo| %>
+      <tr>
+        <td><%= image_tag articulo.imagen, size: "80x80" %></td>
+        <td><%= articulo.nombre %></td>
+        <td><%= articulo.precio %></td>
+        <td><%= articulo.descripcion %></td>
+        <td><%= link_to 'Show', articulo %></td>
+        <td><%= link_to 'Edit', edit_articulo_path(articulo) %></td>
+        <td><%= link_to 'Destroy', articulo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+</table>
+
+<br>
+
+<%= link_to 'New Articulo', new_articulo_path %>
+</center>
